@@ -7,13 +7,13 @@
 using namespace std;
 CRat1::CRat1(const CRat1 &other){// êîíñòðóêòîð êîïèðîâàíèÿ
     this->dim = other.dim;
-    for(int i = 0; i < dim; i++){
+    for(int i = 0; i < dim*2; i++){
         this->data.push_back(other.data[i]);
     }
 }
 CRat1::CRat1(const CRat &other){// êîíñòðóêòîð êîïèðîâàíèÿ
     this->dim = other.dim;
-    for(int i = 0; i < dim; i++){
+    for(int i = 0; i < dim*2; i++){
         this->data.push_back(other.data[i]);
     }
 }
