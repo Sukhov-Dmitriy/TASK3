@@ -5,7 +5,13 @@
 #include <chrono>
 #include "functions.h"
 using namespace std;
-CRat1::CRat1(const CRat1 &other){// конструктор копирования
+CRat1::CRat1(const CRat1 &other){// ГЄГ®Г­Г±ГІГ°ГіГЄГІГ®Г° ГЄГ®ГЇГЁГ°Г®ГўГ Г­ГЁГї
+    this->dim = other.dim;
+    for(int i = 0; i < dim; i++){
+        this->data.push_back(other.data[i]);
+    }
+}
+CRat1::CRat1(const CRat &other){// ГЄГ®Г­Г±ГІГ°ГіГЄГІГ®Г° ГЄГ®ГЇГЁГ°Г®ГўГ Г­ГЁГї
     this->dim = other.dim;
     for(int i = 0; i < dim; i++){
         this->data.push_back(other.data[i]);
@@ -22,7 +28,7 @@ CRat1::CRat1(){
      data.resize(dim*2,0);
 }
 
-double CRat1::operator * (const CRat &B){//скалярное умножение
+double CRat1::operator * (const CRat &B){//Г±ГЄГ Г«ГїГ°Г­Г®ГҐ ГіГ¬Г­Г®Г¦ГҐГ­ГЁГҐ
         double ch = 0, zn = 0, p = 0;
         auto begin = std::chrono::steady_clock::now();
         #pragma omp parallel for
@@ -43,7 +49,7 @@ int CRat1::output()
     ofstream fout(outfile.c_str(), ios_base::app);
     for(int i = 0; i < dim*2; i++){
         fout<<"X"<<i/2<<" = ";
-        fout<<data[i]<<"/"<<data[i+1]<<"\n";// Выводим данны в столбец
+        fout<<data[i]<<"/"<<data[i+1]<<"\n";// Г‚Г»ГўГ®Г¤ГЁГ¬ Г¤Г Г­Г­Г» Гў Г±ГІГ®Г«ГЎГҐГ¶
         i = i+1;
     }
 fout.close();
