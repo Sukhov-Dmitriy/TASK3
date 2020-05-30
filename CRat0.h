@@ -7,11 +7,12 @@ class CRat0 : public CRat{
 private:
 
 public:
-    CRat0(const CRat0 &other);// конструктор копирования
+    CRat0(const CRat0 &other);// ГЄГ®Г­Г±ГІГ°ГіГЄГІГ®Г° ГЄГ®ГЇГЁГ°Г®ГўГ Г­ГЁГї
+    CRat0(const CRat &other);// ГЄГ®Г­Г±ГІГ°ГіГЄГІГ®Г° ГЄГ®ГЇГЁГ°Г®ГўГ Г­ГЁГї
     CRat0(int d);
     CRat0();
     ~CRat0();
-    double operator * (const CRat &B);//Скалярное умножение
+    double operator * (const CRat &B);//Г‘ГЄГ Г«ГїГ°Г­Г®ГҐ ГіГ¬Г­Г®Г¦ГҐГ­ГЁГҐ
     int output();
     using CRat::operator =;
 };
